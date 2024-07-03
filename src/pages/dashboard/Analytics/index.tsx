@@ -4,6 +4,7 @@ import { Alert, Col, Row } from 'react-bootstrap';
 // component
 import PageTitle from '../../../components/PageTitle';
 import EmployeeInfo from './EmployeeInfo'; // import the EmployeeInfo component
+import EmployeeTracking from './EmployeeDetails';
 
 import Statistics from './Statistics';
 import SessionOverview from './SessionOverview';
@@ -46,6 +47,7 @@ const AnalyticsDashboard = () => {
                 sensorStatus="Active"
                 lastUpdate="23 Feb 2023 10:23:06"
             />
+            <EmployeeTracking/>
         </>    
     );
 };
