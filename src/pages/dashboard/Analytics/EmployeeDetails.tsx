@@ -42,16 +42,35 @@ const EmployeeTracking: React.FC = () => {
     },
     search: {
       display: "flex",
+      alignItems: "center",
       marginBottom: "20px",
     },
     searchLabel: {
       marginRight: "10px",
+      fontWeight: "bold",
     },
     searchInput: {
+      flex: 1,
       marginRight: "10px",
+      padding: "5px",
+      border: "1px solid #ccc",
+      borderRadius: "4px",
+    },
+    searchButton: {
+      padding: "5px 10px",
+      backgroundColor: "#007bff",
+      color: "#fff",
+      border: "none",
+      borderRadius: "4px",
+      cursor: "pointer",
     },
     employeeInfo: {
       marginBottom: "20px",
+    },
+    employeeDetail: {
+      marginBottom: "5px",
+      paddingBottom: "5px",
+      borderBottom: "1px solid #eee",
     },
     employeeTasks: {
       marginBottom: "20px",
@@ -73,6 +92,7 @@ const EmployeeTracking: React.FC = () => {
     },
     pointsHeading: {
       marginBottom: "10px",
+      fontWeight: "bold",
     },
     pointsList: {
       listStyleType: "none",
@@ -80,37 +100,53 @@ const EmployeeTracking: React.FC = () => {
     },
     pointsListItem: {
       marginBottom: "5px",
+      padding: "5px",
+      borderBottom: "1px solid #eee",
     },
     lastPosition: {},
     positionHeading: {
       marginBottom: "10px",
+      fontWeight: "bold",
     },
     locationMap: {
       marginBottom: "10px",
     },
     lastLocation: {
+      display: "flex",
+      alignItems: "center",
+    },
+    lastLocationText: {
+      marginLeft: "10px",
       fontWeight: "bold",
     },
   };
 
   return (
-    
+    <div style={styles.app}>
+      <header style={styles.header}>
+        <div style={styles.logo}>alphatic</div>
+        <div style={styles.nav}>
+          <div style={styles.notification}>Notification</div>
+          <div style={styles.support}>support@alphatic.net</div>
+          <button style={styles.logout}>LOGOUT</button>
+        </div>
+      </header>
       <main style={styles.main}>
         <section style={styles.employeeTracking}>
           <div style={styles.search}>
             <label htmlFor="search" style={styles.searchLabel}>Searching Result:</label>
             <input type="text" id="search" name="search" placeholder="Emp ID / Name" style={styles.searchInput} />
-            <button>Search</button>
+            <button style={styles.searchButton}>Search</button>
           </div>
           <div style={styles.employeeInfo}>
-            <div>Emp ID: 1412</div>
-            <div>Emp Name: Raza</div>
-            <div>Designation: Support</div>
-            <div>Emp Tag Battery: 80%</div>
-            <div>Emp Status: Not at assigned location</div>
-            <div>Sensor ID: S21725</div>
-            <div>Sensor Status: Active</div>
-            <div>Last Update: 25 Feb 2023 10:23:06</div>
+            <div style={styles.employeeDetail}>Emp ID: 1412</div>
+            <div style={styles.employeeDetail}>Emp Name: Raza</div>
+            <div style={styles.employeeDetail}>Designation: Support</div>
+            <div style={styles.employeeDetail}>Emp Tag Battery: 80%</div>
+            <div style={styles.employeeDetail}>Emp Status: Not at assigned location</div>
+            <div style={styles.employeeDetail}>Sensor ID: S21725</div>
+            <div style={styles.employeeDetail}>Sensor Status: Active</div>
+            <div style={styles.employeeDetail}>Last Update: 25 Feb 2023 10:23:06</div>
           </div>
           <div style={styles.employeeTasks}>
             <div>Employee Designated Tasks:</div>
@@ -134,18 +170,20 @@ const EmployeeTracking: React.FC = () => {
             <h3 style={styles.positionHeading}>Employee Last Position</h3>
             <div style={styles.locationMap}>
               {/* Simplified map structure */}
-              <img src="map.png" alt="Employee Last Position" />
+              <img src="/src/assets/images/IndustryMap.jpg" alt="Employee Last Position" style={{ width: "100%" }} />
             </div>
             <div style={styles.lastLocation}>
-              <strong>Last Location:</strong>
-              <div>Warehouse BGR</div>
-              <div>Near WorkStation 1.3m</div>
+              <img src="warehouse.png" alt="Warehouse" style={{ width: "50px", height: "50px" }} />
+              <div style={styles.lastLocationText}>
+                <div>Last Location: Warehouse BGR</div>
+                <div>Near WorkStation 1.3m</div>
+              </div>
             </div>
           </div>
         </section>
       </main>
-    
+    </div>
   );
 };
 
-export default EmployeeTracking;
+export default  EmployeeTracking ;
